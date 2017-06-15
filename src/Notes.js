@@ -1,14 +1,18 @@
 import React from 'react'
 
-const Notes = (props) => {
+const Notes = ({ note }) => {
+    
+
     return (
-        <li>
+        <li> 
             <div className="note">
                 <div className="note-title">
-                    {props.noteInfo.title}    
+                    {note.title}
                 </div>
                 <div className="note-body">
-                    <p>{props.noteInfo.text}</p>
+                    <p>
+                        {note.body}
+                    </p>
                 </div>
             </div>
         </li>

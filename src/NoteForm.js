@@ -2,28 +2,45 @@ import React, {Component} from 'react'
 import './NoteForm.css'
 
 class NoteForm extends Component {
+
+  handleChanges = (ev) => {
+    const note = {...this.state.note}
+    note[ev.target.name] = ev.target.value
+    this.setState({note}, () => this.props.saveNote(this.state.note)) 
+  }
+
   constructor(props){
     super(props)
       this.state = {
-          title: '',
-          text: '',
+          note: this.blankNote()
       }
+  }
+
+  blankNote = () => {
+    return{
+      id : null,
+      title: '',
+      body: '',
+    }
+  }
+
     
-    this.handleTitle = this.handleTitle.bind(this)
-    this.handleText = this.handleText.bind(this)
-  }
+    
+  //   this.handleTitle = this.handleTitle.bind(this)
+  //   this.handleText = this.handleText.bind(this)
+  // }
 
-  handleTitle(ev){
-    this.setState({
-      title : ev.target.value
-    })
-  }
+  // handleTitle(ev){
+  //   this.setState({
+  //     title : ev.target.value
+  //   })
+  // }
 
-  handleText(ev){
-    this.setState({
-      text: ev.target.value
-    })
-  }
+  // handleText(ev){
+  //   this.setState({
+  //     text: ev.target.value
+  //   })
+  // }
 
   render() {
     return (
@@ -34,8 +51,8 @@ class NoteForm extends Component {
               type="text" 
               name="title" 
               placeholder="Title your note" 
-              value={this.state.title} 
-              onChange={this.handleTitle}
+              value={this.state.note.title} 
+              onChange={this.handleChanges}
             />
           </p>
           <p>
@@ -44,8 +61,8 @@ class NoteForm extends Component {
               cols="30" 
               rows="10" 
               placeholder="Just start typing..." 
-              value={this.state.text} 
-              onChange={this.handleText}
+              value={this.state.note.body} 
+              onChange={this.handleChanges}
             >
             </textarea>
           </p>

@@ -16,9 +16,10 @@ const SideBar = () => {
         <img className="outline" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1152887/new.png" alt="New note"/>
       </button>
       <span></span>
+      
       <button className="delete-note" onClick={this.deleteNote}>
-        <img src="http://res.freestockphotos.biz/pictures/15/15107-illustration-of-a-red-close-button-pv.png" alt="Delete Note"/>
-        <img className="outline" src="http://res.freestockphotos.biz/pictures/15/15106-illustration-of-a-red-close-button-pv.png" alt="Delete Note"/>
+        <img src="https://image.flaticon.com/icons/svg/61/61795.svg" alt="Delete Note"/>
+        <img className="outline" src="http://res.freestockphotos.biz/pictures/15/15107-illustration-of-a-red-close-button-pv.png" alt="Delete Note"/>
       </button>
     </div>
   )
