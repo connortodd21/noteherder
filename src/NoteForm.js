@@ -1,75 +1,69 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
+
 import './NoteForm.css'
 
 class NoteForm extends Component {
-
-  handleChanges = (ev) => {
-    const note = {...this.state.note}
-    note[ev.target.name] = ev.target.value
-    this.setState({note}, () => this.props.saveNote(this.state.note)) 
-  }
-
-  constructor(props){
+  constructor(props) {
     super(props)
-      this.state = {
-          note: this.blankNote()
-      }
+
+    this.state = {
+      note: this.blankNote(),
+    }
   }
+
+  componentWillReceiveProps(nextProps){
+    console.log(nextProps)
+    this.setState({note: nextProps.activeNote})
+  }
+    
 
   blankNote = () => {
-    return{
-      id : null,
+    return {
+      id: null,
       title: '',
       body: '',
     }
   }
 
-    
-    
-  //   this.handleTitle = this.handleTitle.bind(this)
-  //   this.handleText = this.handleText.bind(this)
-  // }
+  handleChanges = (ev) => {
 
-  // handleTitle(ev){
-  //   this.setState({
-  //     title : ev.target.value
-  //   })
-  // }
+    const note = {...this.state.note}
+    console.log(note)
+    note[ev.target.name] = ev.target.value
+    this.setState({ note },() => this.props.saveNote(this.state.note)) 
+  }
 
-  // handleText(ev){
-  //   this.setState({
-  //     text: ev.target.value
-  //   })
-  // }
+  handleSubmit = (ev) => {
+    ev.preventDefault()
+    this.setState({ note: this.blankNote() })
+  }
 
   render() {
     return (
       <div className="NoteForm">
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <p>
-            <input 
-              type="text" 
-              name="title" 
-              placeholder="Title your note" 
-              value={this.state.note.title} 
+            <input
+              type="text"
+              name="title"
+              placeholder="Title your note"
               onChange={this.handleChanges}
+              value={this.state.note.title}
             />
           </p>
           <p>
-            <textarea 
-              name="body" 
-              cols="30" 
-              rows="10" 
-              placeholder="Just start typing..." 
-              value={this.state.note.body} 
+            <textarea
+              name="body"
+              placeholder="Just start typing..."
               onChange={this.handleChanges}
-            >
-            </textarea>
+              value={this.state.note.body}
+            ></textarea>
           </p>
+          <button type="submit">New Note</button>
         </form>
       </div>
-
     )
   }
 }
+
 export default NoteForm

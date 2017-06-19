@@ -1,5 +1,9 @@
 # Noteherder
 
+## Setup
+
+Copy `base.example.js` to `base'js` and add the approppriate configuration for your firebass app
+
 ## Day 7 Homework
 
 Finish making these components look acceptable.
