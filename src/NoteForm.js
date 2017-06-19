@@ -12,7 +12,6 @@ class NoteForm extends Component {
   }
 
   componentWillReceiveProps(nextProps){
-    console.log(nextProps)
     this.setState({note: nextProps.activeNote})
   }
     

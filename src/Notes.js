@@ -5,10 +5,10 @@ const Note = (props) => {
 
 
     const selectNote = (ev) => {
-        console.log(props)
-        console.log(ev.currentTarget)
-        const title = ev.currentTarget.querySelector('.note-title').textContent
-        const body = ev.currentTarget.querySelector('.note-body p').textContent
+
+        // console.log(ev.currentTarget)
+        // const title = ev.currentTarget.querySelector('.note-title').textContent
+        // const body = ev.currentTarget.querySelector('.note-body p').textContent
         props.activeNote(props.note)
      }
 
