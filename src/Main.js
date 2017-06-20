@@ -1,6 +1,6 @@
 import React from 'react'
 
-
+import './Main.css'
 import Sidebar from './Sidebar'
 import NoteList from './NoteList'
 import NoteForm from './NoteForm'
@@ -8,9 +8,15 @@ import NoteForm from './NoteForm'
 const Main = (props) => {
   return (
     <div className="Main">
-      <Sidebar />
-      <NoteList notes={props.notes} activeNote={props.storeActiveNote}/>
-      <NoteForm saveNote={props.saveNote} storeActiveNote={props.storeActiveNote} activeNote={props.activeNote}/>
+      <Sidebar
+        resetCurrentNote={props.resetCurrentNote}
+        signOut={props.signOut}
+      />
+      <NoteList
+        notes={props.notes}
+        setCurrentNote={props.setCurrentNote}
+      />
+      <NoteForm {...props} />
     </div>
   )
 }

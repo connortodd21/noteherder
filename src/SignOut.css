@@ -1,0 +1,11 @@
+.SignOut {
+  position: absolute;
+  bottom: 10px;
+  left: 5px;
+}
+.SignOut button {
+  background-color: transparent;
+}
+.SignOut button i.fa {
+  font-size: 2rem;
+}

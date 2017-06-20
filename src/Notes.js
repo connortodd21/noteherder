@@ -1,34 +1,22 @@
 import React from 'react'
 
-
-const Note = (props) => {
-
-
-    const selectNote = (ev) => {
-
-        // console.log(ev.currentTarget)
-        // const title = ev.currentTarget.querySelector('.note-title').textContent
-        // const body = ev.currentTarget.querySelector('.note-body p').textContent
-        props.activeNote(props.note)
-     }
-
-    return (
-        <li className="listItem" onClick={selectNote}>
+const Note = ({ note, setCurrentNote }) => {
+  return (
+    <a onClick={() => setCurrentNote(note)}>
+      <li>
         <div className="note">
-            <div className="note-title">
-            {props.note.title}
-            </div>
-            <div className="note-body">
+          <div className="note-title">
+            {note.title}
+          </div>
+          <div className="note-body">
             <p>
-                {props.note.body}
+              {note.body}
             </p>
-            </div>
+          </div>
         </div>
-        </li>
-    )
-}   
-
-
-
+      </li>
+    </a>
+  )
+}
 
 export default Note
