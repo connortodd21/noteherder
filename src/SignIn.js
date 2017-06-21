@@ -9,18 +9,28 @@ const SignIn = () => {
   }
 
   return (
-    <div>
+    <div className="doc">
+      <h3 className="noteHerder">Noteherder</h3>
       <button
         className="SignIn"
+        id="githubSignIn"
         onClick={() => authenticate(githubProvider)}
       >
-        Sign In With GitHub
+      Click to Sign In With Github
+
       </button>
       <button
         className="SignIn"
+        id="googleSignIn"
         onClick={() => authenticate(googleProvider)}
       >
-        Sign In With Google
+        {/*<img src="http://careinfo.in/wp-content/uploads/2015/05/unnamed1.jpg"/>*/}
+        <span className="blue">Click </span>
+        <span className="red">to </span>
+        <span className="yellow">Sign </span>
+        <span className="blue">In </span>
+        <span className="green">With </span>
+        <span className="red">Google </span>
       </button>
     </div>
   )

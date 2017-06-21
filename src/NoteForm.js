@@ -3,8 +3,19 @@ import React, { Component } from 'react'
 import './NoteForm.css'
 
 class NoteForm extends Component {
-  componentWillReceiveProps(nextProp){
-    
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.match.params.id) {
+      const newId = nextProps.match.params.id
+
+      if (newId !== this.props.currentNote.id) {
+        const note = nextProps.notes[newId]
+        if (note) {
+          this.props.setCurrentNote(note)
+        }
+      }
+    } else if (this.props.currentNote.id) {
+      this.props.resetCurrentNote()
+    }
   }
 
   handleChanges = (ev) => {

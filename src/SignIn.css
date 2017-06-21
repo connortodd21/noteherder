@@ -1,15 +1,93 @@
+.doc{
+  height: 110vh;
+  background: url(http://i.imgur.com/LUb8CtP.png);
+}
+
 .SignIn {
-  background-color: #008BF8;
   border: 0;
   border-radius: 5px;
-  color: white;
-  display: block;
   margin: 0 auto;
   padding: 20px;
-  -webkit-transition: background 0.2s;
-  -o-transition: background 0.2s;
-  transition: background 0.2s;
   font-family: 'helvetica neue', sans-serif;
-  font-size: 20px;
+  font-size:30px;
   font-weight: 200;
+  cursor: pointer;
+}
+
+#googleSignIn{
+  position: absolute;
+  left: 35px;
+  top: 350px;
+  background: black;
+  color: black;
+  display : block;
+  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+  transition-duration: 2s ease;
+  transition: all .5s ease-in;
+  outline: none;
+}
+
+#googleSignIn:hover{
+  outline: none;
+  transform: scale(1.2, 1.2) ; 
+  padding: 5px 10px;
+  
+}
+
+.green{
+  color: #3cba54;
+}
+
+.red{
+  color: #db3236;
+}
+
+.blue{
+  color: #4885ed
+}
+
+.yellow{
+  color: #f4c20d;
+}
+
+#githubSignIn{
+  position: absolute;
+  left: 35px;
+  top: 50px;
+  background: black;
+  color: white;
+  display : block;
+  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+  transition-duration: 2s ease;
+  transition: all .5s ease-in;
+  outline: none;
+}
+
+#githubSignIn:hover{
+  outline: none;
+  transform: scale(1.2, 1.2) ; 
+  padding: 5px 10px;
+}
+
+#textThingy{
+  position: absolute;
+  left: 600px;
+  top: 70px;
+  color: black;
+}
+
+#topLine{
+  position: absolute;
+  left: 200px;
+  top: 50px;
+}
+
+#bottomLine{
+  position: absolute;
+  left: 200px;
+  top : 100px;
 }
