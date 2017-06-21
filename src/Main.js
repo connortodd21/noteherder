@@ -1,7 +1,6 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
-
 import './Main.css'
 import Sidebar from './Sidebar'
 import NoteList from './NoteList'
@@ -19,8 +18,12 @@ const Main = (props) => {
         setCurrentNote={props.setCurrentNote}
       />
       <Switch>
-        <Route path="/notes/:id" render={(navProps) => <NoteForm {...props} {...navProps} />}/>
-        <Route path="notes" render={(navProps) => <NoteForm {...props} {...navProps} />}/>
+        <Route path="/notes/:id" render={(navProps) => (
+          <NoteForm {...props} {...navProps} />
+        )} />
+        <Route render={(navProps) => (
+          <NoteForm {...props} {...navProps} />
+        )} />
       </Switch>
     </div>
   )
