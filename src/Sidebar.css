@@ -17,6 +17,7 @@
 
 .Sidebar button {
   background-color: transparent;
+  outline: none;
   border: 0;
   color: #008BF8;
   cursor: pointer;
@@ -29,6 +30,7 @@
     width: 100%;
     transition: opacity 0.25s ease-in-out; }
     .Sidebar button:hover img.outline {
+      outline: none;
       opacity: 0; }
 
 .delete-note{
